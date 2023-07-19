@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Cadastrar Cliente</h1>    
+    <form method="post" action="/clientes/" enctype="multipart/form-data">
+        {% csrf_token %}        
+        <table>
+            {{ form.as_table }}
+        </table>    
+        {{ form.id }}       
+        <input type="submit" value="Cadastrar" class="btn btn-success">
+    </form>    
+    
+</body>
+</html>

@@ -1,0 +1,11 @@
+from django.shortcuts import render
+from .models import Cliente, OrdemDeServico
+
+def clientes_view(request):
+    clientes = Cliente.objects.all()
+    return render(request, 'clientes.html', {'clientes': clientes})
+
+def ordem_de_servico_view(request):
+    ordem_de_servico = OrdemDeServico.objects.all()
+    return render(request, 'ordem_de_servico.html', {'ordem_de_servico': ordem_de_servico})
+

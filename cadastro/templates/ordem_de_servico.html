@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ordem de Serviço</title>
+</head>
+<body>
+    <h1>Ordem de Serviço</h1>
+    <ul>
+    {% for ordem_de_servico in ordem_de_servico %}
+        <li>{{ ordem_de_servico.descricao }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
