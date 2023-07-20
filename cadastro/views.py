@@ -1,10 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import ClienteForm
+from .forms import ClienteForm, OrdemDeServicoForm
 from .models import OrdemDeServico
-
-def ordem_de_servico_view(request):
-    ordem_de_servico = OrdemDeServico.objects.all()
-    return render(request, 'ordem_de_servico.html', {'ordem_de_servico': ordem_de_servico})
 
 
 def clientes(request):
@@ -16,4 +12,20 @@ def clientes(request):
     else:
         form = ClienteForm()
     return render(request, 'clientes.html', {'form': form})
+
+
+def ordem_servico(request):
+    if request.method == 'POST':
+        form = OrdemDeServicoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('detalhes')
+    else:
+        form = OrdemDeServicoForm()
+    return render(request, 'ordem_servico.html', {'form': form})
+
+
+
+
+    
 
